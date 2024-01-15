@@ -97,7 +97,7 @@ async def start(event, args, client):
     """A function for the start command, accepts no arguments yet!"""
     currentTime = tf(time.time() - botStartTime)
     msg = ""
-    msg1 = f"Hi `{event.sender.first_name}`\n"
+    msg1 = f"🦋 Hi `{event.sender.first_name}`\n"
     msg2 = f"{msg1}I've been alive for `{currentTime}` and i'm ready to encode videos 😗"
     msg3 = f"{msg2}\nand by the way you're a temporary user"
     user = event.sender_id
@@ -110,22 +110,22 @@ async def start(event, args, client):
         priv = await event.client.get_entity(int(conf.OWNER.split()[0]))
         msg = f"{msg1}You're not allowed access to this bot"
         msg += f"\nAsk [{priv.first_name}](tg://user?id={conf.OWNER.split()[0]}) "
-        msg += "(nicely) to grant you access."
+        msg += "(𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭⁮) to grant you access."
 
     if not msg:
         msg = msg2
     await event.reply(
         msg,
         buttons=[
-            [Button.inline("Help", data="ihelp")],
+            [Button.inline("𝐇𝐞𝐥𝐩", data="ihelp")],
             [
                 Button.url(
-                    "Source-Code (Original)",
-                    url="github.com/1Danish-00/compressorqueue",
+                    "𝐖𝐃 𝐓𝐨𝐩𝐢𝐜 𝐆𝐫𝐨𝐮𝐩",
+                    url="t.me/WD_Topic_Group",
                 ),
-                Button.url("Developer (Original)", url="t.me/danish_00"),
+                Button.url("❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™)", url="t.me/Opleech"),
             ],
-            [Button.url("Fork Maintainer", url="t.me/Col_serra")],
+            [Button.url("𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭,𝐬 𝐁𝐨𝐭", url="t.me/WD_Contact_Bot")],
         ],
     )
 
@@ -136,15 +136,15 @@ async def help(event, args, client):
 
 async def ihelp(event):
     await event.edit(
-        "**⛩️ An Encode bot**\n\n+"
+        "**🦋 An Encode bot**\n\n+"
         "This bot encodes videos With your custom ffmpeg or handbrake-cli settings."
         "\n+Easy to Use (Depends)\n"
         "-Due to your custom Settings & hosting server bot may or may not take a long time to encode"
-        ".\n\nJust Forward a Video…/videos"
-        "\n\nFor available commands click the Commands button below.",
+        ".\n\n■ Just Forward a Video…/videos"
+        "\n\n■ For available commands click the Commands button below.",
         buttons=[
-            [Button.inline("Commands", data="icommands")],
-            [Button.inline("🔙 Back", data="beck")],
+            [Button.inline("⎔ 𝐂𝐨𝐦𝐦𝐚𝐧𝐝𝐬 ⎔", data="icommands")],
+            [Button.inline("◁◎𝐁𝐚𝐜𝐤", data="beck")],
         ],
     )
 
@@ -153,7 +153,7 @@ async def beck(event):
     sender = event.query.user_id
     currentTime = tf(time.time() - botStartTime)
     msg = ""
-    msg1 = f"Hi `{event.sender.first_name}`\n"
+    msg1 = f"🦋 Hi `{event.sender.first_name}`\n"
     msg2 = f"{msg1}I've been alive for `{currentTime}` and i'm ready to encode videos 😗"
     msg3 = f"{msg2}\nand by the way you're a temporary user"
     if temp_is_allowed(sender):
@@ -162,21 +162,21 @@ async def beck(event):
         priv = await event.client.get_entity(int(conf.OWNER.split()[0]))
         msg = f"{msg1}You're not allowed access to this bot"
         msg += f"\nAsk [{priv.first_name}](tg://user?id={conf.OWNER.split()[0]}) "
-        msg += "(nicely) to grant you access."
+        msg += "(𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭⁪⁬⁮⁮) to grant you access."
     if not msg:
         msg = msg2
     await event.edit(
         msg,
         buttons=[
-            [Button.inline("Help", data="ihelp")],
+            [Button.inline("𝐇𝐞𝐥𝐩", data="ihelp")],
             [
                 Button.url(
-                    "Source-Code (Original)",
-                    url="github.com/1Danish-00/compressorqueue",
+                    "𝐖𝐃 𝐓𝐨𝐩𝐢𝐜 𝐆𝐫𝐨𝐮𝐩",
+                    url="t.me/WD_Topic_Group",
                 ),
-                Button.url("Developer (Original)", url="t.me/danish_00"),
+                Button.url("❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™)", url="t.me/Opleech"),
             ],
-            [Button.url("Fork Maintainer", url="t.me/Col_serra")],
+            [Button.url("𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭,𝐬 𝐁𝐨𝐭", url="t.me/WD_Contact_Bot")],
         ],
     )
 
@@ -324,5 +324,5 @@ help{s} - same as start`
 
 All above commands accept '-h' / '--help' arguments to get more detailed help about each command.
         """,
-        buttons=[Button.inline("🔙 Back", data="ihelp")],
+        buttons=[Button.inline("◁◎𝐁𝐚𝐜𝐤", data="ihelp")],
     )
