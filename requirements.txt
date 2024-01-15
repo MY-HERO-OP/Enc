@@ -1,0 +1,26 @@
+aiohttp
+anitopy
+apscheduler
+aria2p
+country_converter
+emoji-country-flag
+feedparser
+html_telegraph_poster
+humanize
+telethon
+tgcrypto
+psutil
+pycountry
+pymediainfo
+pymongo[srv]
+pyrogram==2.0.106
+#pyrogram==2.0.73
+python-decouple
+qbittorrent-api
+random_word
+tzlocal
+#Depreciating...
+quote
+certifi>=2023.7.22 # not directly required, pinned by Snyk to avoid a vulnerability
+requests>=2.31.0 # not directly required, pinned by Snyk to avoid a vulnerability
+#setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
