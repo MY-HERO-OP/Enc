@@ -36,7 +36,7 @@ class Config:
             self.CMD_SUFFIX = config("CMD_SUFFIX", default=str())
             self.DATABASE_URL = config("DATABASE_URL", default=None)
             self.DBNAME = config("DBNAME", default="ENC")
-            self.DEV = config("DEV", default=123456, cast=int)
+            self.DEV = config("DEV", default=0, cast=int)
             self.DL_STUFF = config("DL_STUFF", default=None)
             self.DUMP_CHANNEL = config("DUMP_CHANNEL", default=0, cast=int)
             self.DUMP_LEECH = config("DUMP_LEECH", default=True, cast=bool)
@@ -69,7 +69,7 @@ class Config:
             self.RSS_CHAT = config("RSS_CHAT", default=0, cast=int)
             self.RSS_DELAY = config("RSS_DELAY", default=60, cast=int)
             self.RSS_DIRECT = config("RSS_DIRECT", default=True, cast=bool)
-            self.RELEASER = config("RELEASER", default="WD|WOODcraft")
+            self.RELEASER = config("RELEASER", default="Op|WOODcraft")")
             self.TELEGRAPH_API = config(
                 "TELEGRAPH_API", default="https://api.telegra.ph"
             )
@@ -88,4 +88,23 @@ class Config:
             exit()
 
 
+class Runtime_Config:
+    # will slowly replace the Var_list class in utils.bot_utils
+    def __init__(self):
+        self.aria2 = None
+        self.cached_dl = False
+        self.display_additional_dl_info = True
+        self.docker_deployed = False
+        self.rss_ran_once = False
+        self.group_enc = False
+        self.only_owner_pm = False
+        self.pause_status = 0
+        self.paused = False
+        self.sas = False
+        self.sqs = False
+        self.started = False
+        self.temp_users = []
+
+
 conf = Config()
+_bot = Runtime_Config()
