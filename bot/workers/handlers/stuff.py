@@ -28,11 +28,13 @@ async def up(event, args, client):
     ist = dt.now()
     msg = await reply_message(event, "…")
     st = dt.now()
-    await edit_message(msg, "`Ping…`")
-    ed = dt.now()
     ims = (st - ist).microseconds / 1000
+    msg1 = "**Pong! ——** `{}`__ms__"
+    st = dt.now()
+    await edit_message(msg, msg1.format(ims))
+    ed = dt.now()
     ms = (ed - st).microseconds / 1000
-    await edit_message(msg, "**Pong!**\n`{}` __ms__, `{}` __ms__".format(ims, ms))
+    await edit_message(msg, f"1. {msg1.format(ims)}\n2. {msg1.format(ms)}")
 
 
 async def status(event, args, client):
@@ -98,7 +100,9 @@ async def start(event, args, client):
     currentTime = tf(time.time() - botStartTime)
     msg = ""
     msg1 = f"🦋 Hi `{event.sender.first_name}`\n"
-    msg2 = f"{msg1}I've been alive for `{currentTime}` and i'm ready to encode videos 😗"
+    msg2 = (
+        f"{msg1}I've been alive for `{currentTime}` and i'm ready to encode videos 😗"
+    )
     msg3 = f"{msg2}\nand by the way you're a temporary user"
     user = event.sender_id
     if not user_is_owner(user) and event.is_private:
@@ -110,7 +114,7 @@ async def start(event, args, client):
         priv = await event.client.get_entity(int(conf.OWNER.split()[0]))
         msg = f"{msg1}You're not allowed access to this bot"
         msg += f"\nAsk [{priv.first_name}](tg://user?id={conf.OWNER.split()[0]}) "
-        msg += "(𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭⁮) to grant you access."
+        msg += "(𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭) to grant you access."
 
     if not msg:
         msg = msg2
@@ -121,11 +125,11 @@ async def start(event, args, client):
             [
                 Button.url(
                     "𝐖𝐃 𝐓𝐨𝐩𝐢𝐜 𝐆𝐫𝐨𝐮𝐩",
-                    url="t.me/WD_Topic_Group",
+                    url="t.me/Op_Topic_Group",
                 ),
-                Button.url("❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™)", url="t.me/Opleech"),
+                Button.url("❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™", url="t.me/Opleech_WD"),
             ],
-            [Button.url("𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭,𝐬 𝐁𝐨𝐭", url="t.me/WD_Contact_Bot")],
+            [Button.url("𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭,𝐬 𝐁𝐨𝐭", url="t.me/WD_Request_Bot")],
         ],
     )
 
@@ -154,7 +158,9 @@ async def beck(event):
     currentTime = tf(time.time() - botStartTime)
     msg = ""
     msg1 = f"🦋 Hi `{event.sender.first_name}`\n"
-    msg2 = f"{msg1}I've been alive for `{currentTime}` and i'm ready to encode videos 😗"
+    msg2 = (
+        f"{msg1}I've been alive for `{currentTime}` and i'm ready to encode videos 😗"
+    )
     msg3 = f"{msg2}\nand by the way you're a temporary user"
     if temp_is_allowed(sender):
         msg = msg3
@@ -162,21 +168,21 @@ async def beck(event):
         priv = await event.client.get_entity(int(conf.OWNER.split()[0]))
         msg = f"{msg1}You're not allowed access to this bot"
         msg += f"\nAsk [{priv.first_name}](tg://user?id={conf.OWNER.split()[0]}) "
-        msg += "(𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭⁪⁬⁮⁮) to grant you access."
+        msg += "(𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭) to grant you access."
     if not msg:
         msg = msg2
     await event.edit(
         msg,
         buttons=[
-            [Button.inline("𝐇𝐞𝐥𝐩", data="ihelp")],
+            [Button.inline("Help", data="ihelp")],
             [
                 Button.url(
                     "𝐖𝐃 𝐓𝐨𝐩𝐢𝐜 𝐆𝐫𝐨𝐮𝐩",
-                    url="t.me/WD_Topic_Group",
+                    url="t.me/Op_Topic_Group",
                 ),
-                Button.url("❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™)", url="t.me/Opleech"),
+                Button.url("❖ 𝐖𝐃 𝐙𝐎𝐍𝐄 ❖ ™", url="t.me/Opleech_WD"),
             ],
-            [Button.url("𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭,𝐬 𝐁𝐨𝐭", url="t.me/WD_Contact_Bot")],
+            [Button.url("𝐖𝐎𝐎𝐃𝐜𝐫𝐚𝐟𝐭,𝐬 𝐁𝐨𝐭", url="t.me/WD_Request_Bot")],
         ],
     )
 
