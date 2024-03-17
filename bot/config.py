@@ -69,7 +69,7 @@ class Config:
             self.RSS_CHAT = config("RSS_CHAT", default=0, cast=int)
             self.RSS_DELAY = config("RSS_DELAY", default=60, cast=int)
             self.RSS_DIRECT = config("RSS_DIRECT", default=True, cast=bool)
-            self.RELEASER = config("RELEASER", default="Op|WOODcraft")")
+            self.RELEASER = config("RELEASER", default="Op|WOODcraft")
             self.TELEGRAPH_API = config(
                 "TELEGRAPH_API", default="https://api.telegra.ph"
             )
