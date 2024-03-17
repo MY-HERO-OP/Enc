@@ -14,8 +14,8 @@ pycountry
 pymediainfo
 pymongo[srv]
 #Pyrography==1.0.2
-#pyrogram==2.0.106
-pyrogram==2.0.73
+pyrogram==2.0.106
+#pyrogram==2.0.73
 python-decouple
 qbittorrent-api
 random_word
